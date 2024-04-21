@@ -1,12 +1,15 @@
 import PySimpleGUI as st
 
 # creating the tab layouts
-tab1_layout = [[st.Text('File to Compress'), st.InputText(), st.FilesBrowse(key='file_compress')],
-               [st.Text('Folder Destination'), st.InputText(), st.FolderBrowse(key='folder_compress')],
-               [st.Button('Confirm'), st.Text(key='output', text_color='green')]
+tab1_layout = [[st.Text('File to Compress: '), st.InputText(), st.FilesBrowse(key='file_compress')],
+               [st.Text('Select Destination: '), st.InputText(), st.FolderBrowse(key='folder_compress')],
+               [st.Button('Confirm'), st.Text(key='output', text_color='green'), st.Push(), st.Button('Exit', key='Exit')]
                ]
 
-tab2_layout = [[st.T('Unzip File')]]
+tab2_layout = [[st.Text('Files to archive: '), st.InputText(), st.FilesBrowse(key='files_archive')],
+               [st.Text('Select Destination: '), st.InputText(), st.FolderBrowse(key='folder_archive')],
+               [st.Button('Confirm'), st.Text(key='output', text_color='green'), st.Push(), st.Button('Exit', key='Exit')]
+               ]
 
 # creating the layout vars:
 # zip_input_text = st.Text('File to Zip')

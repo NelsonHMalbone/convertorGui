@@ -20,3 +20,4 @@ this is the url of source of what im using to use in to figure out TAB sections
 - created a rough design on paper for gui
 - created the file structure for just creation of zipping file tab
 - <b>will need to add a <i> Folder was successfully Zipped </i> for user infomation </b>
+- added a exit button using <b>st.push()</b> just pushes element horizontally to max placement
