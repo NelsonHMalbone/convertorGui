@@ -1,33 +1,40 @@
-import PySimpleGUI as st
+import PySimpleGUI as sT
 
-# creating the tab layouts
-tab1_layout = [[st.Text('File to Compress: '), st.InputText(), st.FilesBrowse(key='file_compress')],
-               [st.Text('Select Destination: '), st.InputText(), st.FolderBrowse(key='folder_compress')],
-               [st.Button('Confirm'), st.Text(key='output', text_color='green'), st.Push(), st.Button('Exit', key='Exit')]
-               ]
 
-tab2_layout = [[st.Text('Files to archive: '), st.InputText(), st.FilesBrowse(key='files_archive')],
-               [st.Text('Select Destination: '), st.InputText(), st.FolderBrowse(key='folder_archive')],
-               [st.Button('Confirm'), st.Text(key='output', text_color='green'), st.Push(), st.Button('Exit', key='Exit')]
-               ]
+def main():
 
-layout = [[st.TabGroup([[st.Tab('Zip File', tab1_layout, tooltip='to zip files'),
-                         st.Tab('Unzip File', tab2_layout, tooltip='to unzip files')]])]]
+    # creating the tab layouts
+    tab1_layout = [[sT.Text('File to Compress: '), sT.InputText(), sT.FilesBrowse(key='file_compress')],
+                   [sT.Text('Select Destination: '), sT.InputText(), sT.FolderBrowse(key='folder_compress')],
+                   [sT.Button('Confirm'), sT.Text(key='output', text_color='green'), sT.Push(),
+                    sT.Button('Exit', key='Exit')]
+                   ]
 
-# creating the window
-window = st.Window('Project Name',
-                   layout=layout)
+    tab2_layout = [[sT.Text('Files to archive: '), sT.InputText(), sT.FilesBrowse(key='files_archive')],
+                   [sT.Text('Select Destination: '), sT.InputText(), sT.FolderBrowse(key='folder_archive')],
+                   [sT.Button('Confirm'), sT.Text(key='output', text_color='green'), sT.Push(),
+                    sT.Button('Exit', key='Exit')]
+                   ]
 
-# event loop to process events and get values of inputs
+    layout = [[sT.TabGroup([[sT.Tab('Zip File', tab1_layout, tooltip='to zip files'),
+                             sT.Tab('Unzip File', tab2_layout, tooltip='to unzip files')]])]]
 
-while True:
-    event, values = window.read()
+    # creating the window
+    window = sT.Window('Project Name',
+                       layout=layout)
 
-    # when the user closes or "x's" the window
+    # event loop to process events and get values of inputs
 
-    if event == st.WIN_CLOSED or event == 'cancel':
-        break
+    while True:
+        event, values = window.read()
 
-    print('Hello', values[0], '!')
+        # when the user closes or "x's" the window
 
-window.close()
+        if event == sT.WIN_CLOSED or event == 'cancel':
+            break
+
+        print('Hello', values[0], '!')
+
+
+if __name__ == '__main__':
+    main()
