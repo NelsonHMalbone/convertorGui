@@ -11,16 +11,6 @@ tab2_layout = [[st.Text('Files to archive: '), st.InputText(), st.FilesBrowse(ke
                [st.Button('Confirm'), st.Text(key='output', text_color='green'), st.Push(), st.Button('Exit', key='Exit')]
                ]
 
-# creating the layout vars:
-# zip_input_text = st.Text('File to Zip')
-# zip_input_field = st.InputText()
-# zip_input_file = st.FilesBrowse()
-# zip_des_text = st.Text('File Des')
-# zip_des_field = st.InputText()
-# zip_des_file = st.FolderBrowse()
-# confirm_btn = st.Button('Confirm')
-# output_info = st.Text(key='output', text_color='green')
-
 layout = [[st.TabGroup([[st.Tab('Zip File', tab1_layout, tooltip='to zip files'),
                          st.Tab('Unzip File', tab2_layout, tooltip='to unzip files')]])]]
 
